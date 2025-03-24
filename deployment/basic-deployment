@@ -1,0 +1,75 @@
+# Basic Deployment Guide for WorldLink Protocol
+
+This guide provides basic instructions on how to deploy and run the WorldLink Protocol components. Please note that this is a simplified guide and might need to be adapted based on your specific environment and implementation.
+
+## Prerequisites
+
+Before you begin, ensure you have the necessary software installed based on the components you intend to run:
+
+* **WorldLink Bus:** Requires the runtime environment for its implementation language (e.g., Python, Node.js).
+* **Agents:** Require the runtime environment for their implementation language (e.g., Python 3.7+, Node.js 14+).
+
+## Step 1: Running the WorldLink Bus
+
+The WorldLink Bus is the central communication hub. You need to start an instance of the bus before you can run any agents.
+
+1.  **Navigate to the Bus Directory:** Open your terminal and navigate to the directory where the WorldLink Bus implementation is located (e.g., if you have a `bus/` directory in your repository).
+
+    ```bash
+    cd bus/
+    ```
+
+2.  **Run the Bus:** Execute the command to start the bus. This command will depend on the bus's implementation language. For example, if the bus is implemented in Python, it might be:
+
+    ```bash
+    python run_bus.py
+    ```
+
+    Or, if it's in Node.js:
+
+    ```bash
+    node bus.js
+    ```
+
+    Refer to the specific documentation for your WorldLink Bus implementation for the exact command.
+
+3.  **Verify the Bus is Running:** You should see output in the terminal indicating that the WorldLink Bus has started successfully and is listening for connections.
+
+## Step 2: Deploying and Running Agents
+
+Once the WorldLink Bus is running, you can deploy and run your agents.
+
+1.  **Navigate to the Agent Directory:** Open a new terminal window (or tab) for each agent you want to run. Navigate to the directory containing the agent's code. For example, for the Hello World agent:
+
+    ```bash
+    cd examples/hello-world/
+    ```
+
+2.  **Run the Agent:** Execute the command to start the agent. Again, this depends on the agent's implementation language.
+
+    * **For Python:**
+
+        ```bash
+        python hello_world.py
+        ```
+
+    * **For JavaScript:**
+
+        ```bash
+        node hello_world.js
+        ```
+
+3.  **Agent Configuration:** Ensure that the agent's configuration (within its code or a configuration file) specifies the correct address and port of the WorldLink Bus that you started in Step 1.
+
+4.  **Verify Agent Connection:** You should see output in the agent's terminal indicating that it has connected to the WorldLink Bus and registered itself. You might also see messages being published or received, depending on the agent's functionality.
+
+## Next Steps
+
+This basic guide provides a starting point. More advanced deployment scenarios might involve:
+
+* **Containerization:** Using tools like Docker to package the bus and agents for easier deployment and management.
+* **Cloud Platforms:** Deploying the WorldLink Bus and agents on cloud infrastructure like AWS, Google Cloud, or Azure.
+* **Configuration Management:** Using configuration files or environment variables to manage the settings for the bus and agents.
+* **Monitoring and Logging:** Setting up systems to monitor the health and performance of the deployed components.
+
+Refer to more detailed documentation as it becomes available for advanced deployment strategies.
